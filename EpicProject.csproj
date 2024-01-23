@@ -254,6 +254,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EpicProject.Core\EpicProject.Core.csproj">
+      <Project>{8a68b8ff-6927-4db0-85ed-dcab5cf1f1b4}</Project>
+      <Name>EpicProject.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EpicProject.Domain\EpicProject.Domain.csproj">
+      <Project>{eb768bc1-16f9-46bf-8530-007eaa9f701f}</Project>
+      <Name>EpicProject.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
