@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f2f96c06db6c4c639fcb8b29534b53dc" Name="Diagram1">
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Hrs_Team_Projects" Width="1.5" PointX="3.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Hrs_Team_Users" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Hrs_Teams" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Prj_Epics" Width="1.5" PointX="3.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Prj_Projects" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Prj_Tasks" Width="1.5" PointX="6" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AmnPardazDatabaseModel.Sys_Users" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Hrs_Team_Projects_Hrs_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Hrs_Team_Projects_Prj_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Hrs_Team_Users_Hrs_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Hrs_Team_Users_Sys_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Prj_Epics_Prj_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Prj_Tasks_Prj_Epics" ManuallyRouted="false" />
+        <AssociationConnector Association="AmnPardazDatabaseModel.FK_Prj_Tasks_Sys_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

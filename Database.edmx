@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AmnPardazDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Hrs_Team_Projects">
+          <Key>
+            <PropertyRef Name="Team_ProjectID" />
+          </Key>
+          <Property Name="Team_ProjectID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProjectID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hrs_Team_Users">
+          <Key>
+            <PropertyRef Name="Team_UserID" />
+          </Key>
+          <Property Name="Team_UserID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UserID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hrs_Teams">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="500" />
+          <Property Name="Label" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="_IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="_LastModifyDate" Type="datetime" />
+          <Property Name="_LastModifier" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Prj_Epics">
+          <Key>
+            <PropertyRef Name="EpicID" />
+          </Key>
+          <Property Name="EpicID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InitialEstimate" Type="int" Nullable="false" />
+          <Property Name="CurrentEstimate" Type="int" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="DueDate" Type="date" Nullable="false" />
+          <Property Name="Quater" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="ApproveDate" Type="datetime" />
+          <Property Name="Origin" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="AccordingToPlan" Type="bit" Nullable="false" />
+          <Property Name="EpicDoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Attachment1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment3" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment4" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment5" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment6" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProductBranchID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="EpicTypeID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TeamID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PriorityID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StatusID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProjectID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="_IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="_LastModifyDate" Type="datetime" />
+          <Property Name="_LastModifier" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Prj_Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Reasons" Type="nvarchar(max)" />
+          <Property Name="Purposes" Type="nvarchar(max)" />
+          <Property Name="Owners" Type="nvarchar(max)" />
+          <Property Name="ProjectTypeID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="_IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="_LastModifyDate" Type="datetime" />
+          <Property Name="_LastModifier" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Prj_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="InitialEstimate" Type="int" Nullable="false" />
+          <Property Name="CurrentEstimate" Type="int" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="DueDate" Type="date" Nullable="false" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="ApproveDate" Type="datetime" />
+          <Property Name="CloseDate" Type="datetime" />
+          <Property Name="TaskDoD" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Attachment1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment3" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment4" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment5" Type="nvarchar" MaxLength="500" />
+          <Property Name="Attachment6" Type="nvarchar" MaxLength="500" />
+          <Property Name="EpicID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TaskTypeID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PriorityID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StatusID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UserID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IssueID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="_IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="_LastModifyDate" Type="datetime" />
+          <Property Name="_LastModifier" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Sys_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="LoginEnabled" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="BusinessImpact" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="EmployeeID" Type="bigint" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="500" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TellNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="FaceImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="LastChangePasswordDate" Type="datetime" />
+          <Property Name="PasswordIsReseted" Type="bit" />
+          <Property Name="Label" Type="nvarchar" MaxLength="1001" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="AuthenticationMethod" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="RegionID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SubRegionID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="SiteID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="_IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="_LastModifyDate" Type="datetime" />
+          <Property Name="_LastModifier" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_Hrs_Team_Projects_Hrs_Teams">
+          <End Role="Hrs_Teams" Type="Self.Hrs_Teams" Multiplicity="1" />
+          <End Role="Hrs_Team_Projects" Type="Self.Hrs_Team_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hrs_Teams">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Projects">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Projects_Prj_Projects">
+          <End Role="Prj_Projects" Type="Self.Prj_Projects" Multiplicity="1" />
+          <End Role="Hrs_Team_Projects" Type="Self.Hrs_Team_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Users_Hrs_Teams">
+          <End Role="Hrs_Teams" Type="Self.Hrs_Teams" Multiplicity="1" />
+          <End Role="Hrs_Team_Users" Type="Self.Hrs_Team_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hrs_Teams">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Users">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Users_Sys_Users">
+          <End Role="Sys_Users" Type="Self.Sys_Users" Multiplicity="1" />
+          <End Role="Hrs_Team_Users" Type="Self.Hrs_Team_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Epics_Prj_Projects">
+          <End Role="Prj_Projects" Type="Self.Prj_Projects" Multiplicity="1" />
+          <End Role="Prj_Epics" Type="Self.Prj_Epics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Prj_Epics">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Tasks_Prj_Epics">
+          <End Role="Prj_Epics" Type="Self.Prj_Epics" Multiplicity="1" />
+          <End Role="Prj_Tasks" Type="Self.Prj_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Epics">
+              <PropertyRef Name="EpicID" />
+            </Principal>
+            <Dependent Role="Prj_Tasks">
+              <PropertyRef Name="EpicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Tasks_Sys_Users">
+          <End Role="Sys_Users" Type="Self.Sys_Users" Multiplicity="1" />
+          <End Role="Prj_Tasks" Type="Self.Prj_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Prj_Tasks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AmnPardazDatabaseModelStoreContainer">
+          <EntitySet Name="Hrs_Team_Projects" EntityType="Self.Hrs_Team_Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hrs_Team_Users" EntityType="Self.Hrs_Team_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hrs_Teams" EntityType="Self.Hrs_Teams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prj_Epics" EntityType="Self.Prj_Epics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prj_Projects" EntityType="Self.Prj_Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prj_Tasks" EntityType="Self.Prj_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Users" EntityType="Self.Sys_Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Hrs_Team_Projects_Hrs_Teams" Association="Self.FK_Hrs_Team_Projects_Hrs_Teams">
+            <End Role="Hrs_Teams" EntitySet="Hrs_Teams" />
+            <End Role="Hrs_Team_Projects" EntitySet="Hrs_Team_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Projects_Prj_Projects" Association="Self.FK_Hrs_Team_Projects_Prj_Projects">
+            <End Role="Prj_Projects" EntitySet="Prj_Projects" />
+            <End Role="Hrs_Team_Projects" EntitySet="Hrs_Team_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Users_Hrs_Teams" Association="Self.FK_Hrs_Team_Users_Hrs_Teams">
+            <End Role="Hrs_Teams" EntitySet="Hrs_Teams" />
+            <End Role="Hrs_Team_Users" EntitySet="Hrs_Team_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Users_Sys_Users" Association="Self.FK_Hrs_Team_Users_Sys_Users">
+            <End Role="Sys_Users" EntitySet="Sys_Users" />
+            <End Role="Hrs_Team_Users" EntitySet="Hrs_Team_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Epics_Prj_Projects" Association="Self.FK_Prj_Epics_Prj_Projects">
+            <End Role="Prj_Projects" EntitySet="Prj_Projects" />
+            <End Role="Prj_Epics" EntitySet="Prj_Epics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Tasks_Prj_Epics" Association="Self.FK_Prj_Tasks_Prj_Epics">
+            <End Role="Prj_Epics" EntitySet="Prj_Epics" />
+            <End Role="Prj_Tasks" EntitySet="Prj_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Tasks_Sys_Users" Association="Self.FK_Prj_Tasks_Sys_Users">
+            <End Role="Sys_Users" EntitySet="Sys_Users" />
+            <End Role="Prj_Tasks" EntitySet="Prj_Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AmnPardazDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Hrs_Team_Projects">
+          <Key>
+            <PropertyRef Name="Team_ProjectID" />
+          </Key>
+          <Property Name="Team_ProjectID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProjectID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Hrs_Teams" Relationship="Self.FK_Hrs_Team_Projects_Hrs_Teams" FromRole="Hrs_Team_Projects" ToRole="Hrs_Teams" />
+          <NavigationProperty Name="Prj_Projects" Relationship="Self.FK_Hrs_Team_Projects_Prj_Projects" FromRole="Hrs_Team_Projects" ToRole="Prj_Projects" />
+        </EntityType>
+        <EntityType Name="Hrs_Team_Users">
+          <Key>
+            <PropertyRef Name="Team_UserID" />
+          </Key>
+          <Property Name="Team_UserID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UserID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="Hrs_Teams" Relationship="Self.FK_Hrs_Team_Users_Hrs_Teams" FromRole="Hrs_Team_Users" ToRole="Hrs_Teams" />
+          <NavigationProperty Name="Sys_Users" Relationship="Self.FK_Hrs_Team_Users_Sys_Users" FromRole="Hrs_Team_Users" ToRole="Sys_Users" />
+        </EntityType>
+        <EntityType Name="Hrs_Teams">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Label" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_LastModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="C_LastModifier" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Hrs_Team_Projects" Relationship="Self.FK_Hrs_Team_Projects_Hrs_Teams" FromRole="Hrs_Teams" ToRole="Hrs_Team_Projects" />
+          <NavigationProperty Name="Hrs_Team_Users" Relationship="Self.FK_Hrs_Team_Users_Hrs_Teams" FromRole="Hrs_Teams" ToRole="Hrs_Team_Users" />
+        </EntityType>
+        <EntityType Name="Prj_Epics">
+          <Key>
+            <PropertyRef Name="EpicID" />
+          </Key>
+          <Property Name="EpicID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InitialEstimate" Type="Int32" Nullable="false" />
+          <Property Name="CurrentEstimate" Type="Int32" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Quater" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+          <Property Name="Origin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccordingToPlan" Type="Boolean" Nullable="false" />
+          <Property Name="EpicDoD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Attachment1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment6" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProductBranchID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EpicTypeID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TeamID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PriorityID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StatusID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProjectID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="C_IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_LastModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="C_LastModifier" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Prj_Projects" Relationship="Self.FK_Prj_Epics_Prj_Projects" FromRole="Prj_Epics" ToRole="Prj_Projects" />
+          <NavigationProperty Name="Prj_Tasks" Relationship="Self.FK_Prj_Tasks_Prj_Epics" FromRole="Prj_Epics" ToRole="Prj_Tasks" />
+        </EntityType>
+        <EntityType Name="Prj_Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="Reasons" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purposes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Owners" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectTypeID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="C_IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_LastModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="C_LastModifier" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Hrs_Team_Projects" Relationship="Self.FK_Hrs_Team_Projects_Prj_Projects" FromRole="Prj_Projects" ToRole="Hrs_Team_Projects" />
+          <NavigationProperty Name="Prj_Epics" Relationship="Self.FK_Prj_Epics_Prj_Projects" FromRole="Prj_Projects" ToRole="Prj_Epics" />
+        </EntityType>
+        <EntityType Name="Prj_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InitialEstimate" Type="Int32" Nullable="false" />
+          <Property Name="CurrentEstimate" Type="Int32" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="3" />
+          <Property Name="ApproveDate" Type="DateTime" Precision="3" />
+          <Property Name="CloseDate" Type="DateTime" Precision="3" />
+          <Property Name="TaskDoD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Attachment6" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EpicID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TaskTypeID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PriorityID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="StatusID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="UserID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IssueID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="C_IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_LastModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="C_LastModifier" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Prj_Epics" Relationship="Self.FK_Prj_Tasks_Prj_Epics" FromRole="Prj_Tasks" ToRole="Prj_Epics" />
+          <NavigationProperty Name="Sys_Users" Relationship="Self.FK_Prj_Tasks_Sys_Users" FromRole="Prj_Tasks" ToRole="Sys_Users" />
+        </EntityType>
+        <EntityType Name="Sys_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoginEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BusinessImpact" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int64" />
+          <Property Name="EmailID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TellNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FaceImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LastChangePasswordDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordIsReseted" Type="Boolean" />
+          <Property Name="Label" Type="String" MaxLength="1001" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="AuthenticationMethod" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RegionID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SubRegionID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="SiteID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="C_IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_LastModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="C_LastModifier" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Hrs_Team_Users" Relationship="Self.FK_Hrs_Team_Users_Sys_Users" FromRole="Sys_Users" ToRole="Hrs_Team_Users" />
+          <NavigationProperty Name="Prj_Tasks" Relationship="Self.FK_Prj_Tasks_Sys_Users" FromRole="Sys_Users" ToRole="Prj_Tasks" />
+        </EntityType>
+        <Association Name="FK_Hrs_Team_Projects_Hrs_Teams">
+          <End Role="Hrs_Teams" Type="Self.Hrs_Teams" Multiplicity="1" />
+          <End Role="Hrs_Team_Projects" Type="Self.Hrs_Team_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hrs_Teams">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Projects">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Projects_Prj_Projects">
+          <End Role="Prj_Projects" Type="Self.Prj_Projects" Multiplicity="1" />
+          <End Role="Hrs_Team_Projects" Type="Self.Hrs_Team_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Users_Hrs_Teams">
+          <End Role="Hrs_Teams" Type="Self.Hrs_Teams" Multiplicity="1" />
+          <End Role="Hrs_Team_Users" Type="Self.Hrs_Team_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hrs_Teams">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Users">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hrs_Team_Users_Sys_Users">
+          <End Role="Sys_Users" Type="Self.Sys_Users" Multiplicity="1" />
+          <End Role="Hrs_Team_Users" Type="Self.Hrs_Team_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Hrs_Team_Users">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Epics_Prj_Projects">
+          <End Role="Prj_Projects" Type="Self.Prj_Projects" Multiplicity="1" />
+          <End Role="Prj_Epics" Type="Self.Prj_Epics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Prj_Epics">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Tasks_Prj_Epics">
+          <End Role="Prj_Epics" Type="Self.Prj_Epics" Multiplicity="1" />
+          <End Role="Prj_Tasks" Type="Self.Prj_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prj_Epics">
+              <PropertyRef Name="EpicID" />
+            </Principal>
+            <Dependent Role="Prj_Tasks">
+              <PropertyRef Name="EpicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prj_Tasks_Sys_Users">
+          <End Role="Sys_Users" Type="Self.Sys_Users" Multiplicity="1" />
+          <End Role="Prj_Tasks" Type="Self.Prj_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Prj_Tasks">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AmnPardazEpicProject" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Hrs_Team_Projects" EntityType="Self.Hrs_Team_Projects" />
+          <EntitySet Name="Hrs_Team_Users" EntityType="Self.Hrs_Team_Users" />
+          <EntitySet Name="Hrs_Teams" EntityType="Self.Hrs_Teams" />
+          <EntitySet Name="Prj_Epics" EntityType="Self.Prj_Epics" />
+          <EntitySet Name="Prj_Projects" EntityType="Self.Prj_Projects" />
+          <EntitySet Name="Prj_Tasks" EntityType="Self.Prj_Tasks" />
+          <EntitySet Name="Sys_Users" EntityType="Self.Sys_Users" />
+          <AssociationSet Name="FK_Hrs_Team_Projects_Hrs_Teams" Association="Self.FK_Hrs_Team_Projects_Hrs_Teams">
+            <End Role="Hrs_Teams" EntitySet="Hrs_Teams" />
+            <End Role="Hrs_Team_Projects" EntitySet="Hrs_Team_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Projects_Prj_Projects" Association="Self.FK_Hrs_Team_Projects_Prj_Projects">
+            <End Role="Prj_Projects" EntitySet="Prj_Projects" />
+            <End Role="Hrs_Team_Projects" EntitySet="Hrs_Team_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Users_Hrs_Teams" Association="Self.FK_Hrs_Team_Users_Hrs_Teams">
+            <End Role="Hrs_Teams" EntitySet="Hrs_Teams" />
+            <End Role="Hrs_Team_Users" EntitySet="Hrs_Team_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hrs_Team_Users_Sys_Users" Association="Self.FK_Hrs_Team_Users_Sys_Users">
+            <End Role="Sys_Users" EntitySet="Sys_Users" />
+            <End Role="Hrs_Team_Users" EntitySet="Hrs_Team_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Epics_Prj_Projects" Association="Self.FK_Prj_Epics_Prj_Projects">
+            <End Role="Prj_Projects" EntitySet="Prj_Projects" />
+            <End Role="Prj_Epics" EntitySet="Prj_Epics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Tasks_Prj_Epics" Association="Self.FK_Prj_Tasks_Prj_Epics">
+            <End Role="Prj_Epics" EntitySet="Prj_Epics" />
+            <End Role="Prj_Tasks" EntitySet="Prj_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prj_Tasks_Sys_Users" Association="Self.FK_Prj_Tasks_Sys_Users">
+            <End Role="Sys_Users" EntitySet="Sys_Users" />
+            <End Role="Prj_Tasks" EntitySet="Prj_Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AmnPardazDatabaseModelStoreContainer" CdmEntityContainer="AmnPardazEpicProject">
+          <EntitySetMapping Name="Hrs_Team_Projects">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Hrs_Team_Projects">
+              <MappingFragment StoreEntitySet="Hrs_Team_Projects">
+                <ScalarProperty Name="Team_ProjectID" ColumnName="Team_ProjectID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hrs_Team_Users">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Hrs_Team_Users">
+              <MappingFragment StoreEntitySet="Hrs_Team_Users">
+                <ScalarProperty Name="Team_UserID" ColumnName="Team_UserID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hrs_Teams">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Hrs_Teams">
+              <MappingFragment StoreEntitySet="Hrs_Teams">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="C_IsDeleted" ColumnName="_IsDeleted" />
+                <ScalarProperty Name="C_LastModifyDate" ColumnName="_LastModifyDate" />
+                <ScalarProperty Name="C_LastModifier" ColumnName="_LastModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prj_Epics">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Prj_Epics">
+              <MappingFragment StoreEntitySet="Prj_Epics">
+                <ScalarProperty Name="EpicID" ColumnName="EpicID" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="InitialEstimate" ColumnName="InitialEstimate" />
+                <ScalarProperty Name="CurrentEstimate" ColumnName="CurrentEstimate" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Quater" ColumnName="Quater" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="AccordingToPlan" ColumnName="AccordingToPlan" />
+                <ScalarProperty Name="EpicDoD" ColumnName="EpicDoD" />
+                <ScalarProperty Name="Attachment1" ColumnName="Attachment1" />
+                <ScalarProperty Name="Attachment2" ColumnName="Attachment2" />
+                <ScalarProperty Name="Attachment3" ColumnName="Attachment3" />
+                <ScalarProperty Name="Attachment4" ColumnName="Attachment4" />
+                <ScalarProperty Name="Attachment5" ColumnName="Attachment5" />
+                <ScalarProperty Name="Attachment6" ColumnName="Attachment6" />
+                <ScalarProperty Name="ProductBranchID" ColumnName="ProductBranchID" />
+                <ScalarProperty Name="EpicTypeID" ColumnName="EpicTypeID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="C_IsDeleted" ColumnName="_IsDeleted" />
+                <ScalarProperty Name="C_LastModifyDate" ColumnName="_LastModifyDate" />
+                <ScalarProperty Name="C_LastModifier" ColumnName="_LastModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prj_Projects">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Prj_Projects">
+              <MappingFragment StoreEntitySet="Prj_Projects">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Reasons" ColumnName="Reasons" />
+                <ScalarProperty Name="Purposes" ColumnName="Purposes" />
+                <ScalarProperty Name="Owners" ColumnName="Owners" />
+                <ScalarProperty Name="ProjectTypeID" ColumnName="ProjectTypeID" />
+                <ScalarProperty Name="C_IsDeleted" ColumnName="_IsDeleted" />
+                <ScalarProperty Name="C_LastModifyDate" ColumnName="_LastModifyDate" />
+                <ScalarProperty Name="C_LastModifier" ColumnName="_LastModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prj_Tasks">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Prj_Tasks">
+              <MappingFragment StoreEntitySet="Prj_Tasks">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="InitialEstimate" ColumnName="InitialEstimate" />
+                <ScalarProperty Name="CurrentEstimate" ColumnName="CurrentEstimate" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+                <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+                <ScalarProperty Name="TaskDoD" ColumnName="TaskDoD" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Attachment1" ColumnName="Attachment1" />
+                <ScalarProperty Name="Attachment2" ColumnName="Attachment2" />
+                <ScalarProperty Name="Attachment3" ColumnName="Attachment3" />
+                <ScalarProperty Name="Attachment4" ColumnName="Attachment4" />
+                <ScalarProperty Name="Attachment5" ColumnName="Attachment5" />
+                <ScalarProperty Name="Attachment6" ColumnName="Attachment6" />
+                <ScalarProperty Name="EpicID" ColumnName="EpicID" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="IssueID" ColumnName="IssueID" />
+                <ScalarProperty Name="C_IsDeleted" ColumnName="_IsDeleted" />
+                <ScalarProperty Name="C_LastModifyDate" ColumnName="_LastModifyDate" />
+                <ScalarProperty Name="C_LastModifier" ColumnName="_LastModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Users">
+            <EntityTypeMapping TypeName="AmnPardazDatabaseModel.Sys_Users">
+              <MappingFragment StoreEntitySet="Sys_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LoginEnabled" ColumnName="LoginEnabled" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="BusinessImpact" ColumnName="BusinessImpact" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="TellNo" ColumnName="TellNo" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="FaceImage" ColumnName="FaceImage" />
+                <ScalarProperty Name="LastChangePasswordDate" ColumnName="LastChangePasswordDate" />
+                <ScalarProperty Name="PasswordIsReseted" ColumnName="PasswordIsReseted" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="AuthenticationMethod" ColumnName="AuthenticationMethod" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+                <ScalarProperty Name="SubRegionID" ColumnName="SubRegionID" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="C_IsDeleted" ColumnName="_IsDeleted" />
+                <ScalarProperty Name="C_LastModifyDate" ColumnName="_LastModifyDate" />
+                <ScalarProperty Name="C_LastModifier" ColumnName="_LastModifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

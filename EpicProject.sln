@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject", "EpicProject.csproj", "{F1F9A1C1-134F-43FB-9749-B579D71D177D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject.Domain", "..\EpicProject.Domain\EpicProject.Domain.csproj", "{EB768BC1-16F9-46BF-8530-007EAA9F701F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject.Core", "..\EpicProject.Core\EpicProject.Core.csproj", "{8A68B8FF-6927-4DB0-85ED-DCAB5CF1F1B4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{F1F9A1C1-134F-43FB-9749-B579D71D177D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1F9A1C1-134F-43FB-9749-B579D71D177D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F9A1C1-134F-43FB-9749-B579D71D177D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A68B8FF-6927-4DB0-85ED-DCAB5CF1F1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A68B8FF-6927-4DB0-85ED-DCAB5CF1F1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A68B8FF-6927-4DB0-85ED-DCAB5CF1F1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A68B8FF-6927-4DB0-85ED-DCAB5CF1F1B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
