@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject", "EpicProject.csproj", "{F1F9A1C1-134F-43FB-9749-B579D71D177D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject.Core", "..\EpicProject.Core\EpicProject.Core.csproj", "{648FD29D-E7D7-4B7C-B6A7-293E7FD74B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpicProject.Core", "..\EpicProject.Core\EpicProject.Core.csproj", "{648FD29D-E7D7-4B7C-B6A7-293E7FD74B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject.Domain", "..\EpicProject.Domain\EpicProject.Domain.csproj", "{403F5638-8FC8-490E-80FE-BE031005DA0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicProject.Domain", "..\EpicProject.Domain\EpicProject.Domain.csproj", "{EB768BC1-16F9-46BF-8530-007EAA9F701F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{648FD29D-E7D7-4B7C-B6A7-293E7FD74B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{648FD29D-E7D7-4B7C-B6A7-293E7FD74B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{648FD29D-E7D7-4B7C-B6A7-293E7FD74B8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{403F5638-8FC8-490E-80FE-BE031005DA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{403F5638-8FC8-490E-80FE-BE031005DA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{403F5638-8FC8-490E-80FE-BE031005DA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{403F5638-8FC8-490E-80FE-BE031005DA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB768BC1-16F9-46BF-8530-007EAA9F701F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
